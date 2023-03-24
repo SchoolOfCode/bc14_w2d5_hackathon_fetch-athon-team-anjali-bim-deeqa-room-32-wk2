@@ -28,8 +28,6 @@ console.log(gettingJoke)
 
  }
 
-    dadJokes()
-
 
     document.querySelector('#click-me').addEventListener('click', dadJokes);
 
