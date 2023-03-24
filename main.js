@@ -11,40 +11,29 @@
 
 // }
 
-// pokemon()
 
-console.log("linked")
-async function trivia() {
-    const response = await fetch ("https://opentdb.com/api.php?amount=10");
-    console.log(response)
-    const data = await response.json()
-    console.log(data)
+
+ async function dadJokes() {
+   const response = await fetch("https://icanhazdadjoke.com/", {
+    headers: { accept: "application/json" },
+  });
+
+ 
+  console.log(response)
+      const gettingJoke = await response.json()
+console.log(gettingJoke)
+ 
+  const theJoke = document.querySelector("#dadJoke");
+  theJoke.textContent = gettingJoke.joke;
+
+ }
+
+    dadJokes()
+
+
+    document.querySelector('#click-me').addEventListener('click', dadJokes);
+
     
 
-}
 
-trivia()
 
-// console.log("linked")
-// async function dadJokes() {
-//     const response = await fetch("https://icanhazdadjoke.com/", {
-//         headers: { accept: "application/json" },
-//       });
-//     console.log(response)
-//     const data = await response.json()
-//     console.log(data)
-
-// }
-
-// dadJokes()
-
-// console.log("linked")
-// async function dictionary() {
-//     const response = await fetch("https://api.dictionaryapi.dev/api/v2/entries/en_GB/hello")
-//     console.log(response)
-//     const data = await response.json()
-//     console.log(data)
-
-// }
-
-// dictionary()
