@@ -4,6 +4,10 @@ body {
           font-family: 'Arial', sans-serif;
           text-align: center;
       }
+
+      #favourite-question {
+        color: black;
+      }
       h1 {
           font-size: 3rem;
           margin-top: 2rem;

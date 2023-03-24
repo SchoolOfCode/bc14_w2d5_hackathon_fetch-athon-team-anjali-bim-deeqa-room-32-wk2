@@ -4,32 +4,46 @@
 //Console log response
 // console.log("linked")
 // async function pokemon() {
-//     const response = await fetch ("https://pokeapi.co/api/v2/pokemon/1/");
-//     console.log(response)
-//     const data = await response.json()
-//     console.log(data)
+  //     const response = await fetch ("https://pokeapi.co/api/v2/pokemon/1/");
+  //     console.log(response)
+  //     const data = await response.json()
+  //     console.log(data)
+  
+  // }
+  
+  function addToFavourites(str) {
+     let jokeList = document.createElement("li")
+     jokeList.textContent = str
+     document.querySelector("#favourites").appendChild(jokeList)
+   }
 
-// }
-
-
-
- async function dadJokes() {
-   const response = await fetch("https://icanhazdadjoke.com/", {
-    headers: { accept: "application/json" },
-  });
-
- 
-  console.log(response)
+   
+   
+   async function dadJokes() {
+     const response = await fetch("https://icanhazdadjoke.com/", {
+       headers: { accept: "application/json" },
+      });
+      console.log(response)
       const gettingJoke = await response.json()
-console.log(gettingJoke)
- 
-  const theJoke = document.querySelector("#dadJoke");
-  theJoke.textContent = gettingJoke.joke;
-
+      console.log(gettingJoke)
+      
+      const theJoke = document.querySelector("#dadJoke");
+      theJoke.textContent = gettingJoke.joke;
+      
+      //if input = yes, add to favourites
+      //put this function inside the async function with (theJoke.textContent)
+      // add event listener to YES button
+      let favouriteButton = document.querySelector("#yes-favourites")
+      favouriteButton.addEventListener("click", () => addToFavourites(theJoke.textContent))
  }
 
+ 
+ document.querySelector('#click-me').addEventListener('click', dadJokes);
+ // create submit button
+ //if rated highest, ask if you want to save to fav 
+ //to create a favourites list
 
-    document.querySelector('#click-me').addEventListener('click', dadJokes);
+  //create fav list, with fav dad jokes
 
     
 
