@@ -60,7 +60,7 @@ body {
           color: #F5E5A5;
           text-shadow: 1px 1px 0px #000;
       }
-    .dadJoke {
+    #dadJoke, #prompts {
         color: white;
         font-size:2rem ;
     }
