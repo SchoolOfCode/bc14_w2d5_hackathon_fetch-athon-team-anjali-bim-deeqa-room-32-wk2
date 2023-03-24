@@ -36,9 +36,21 @@
       let favouriteButton = document.querySelector("#yes-favourites")
       favouriteButton.addEventListener("click", () => addToFavourites(theJoke.textContent))
  }
-
- 
  document.querySelector('#click-me').addEventListener('click', dadJokes);
+
+const refreshButton = document.querySelector("#refresh");
+refreshButton.addEventListener("click", () => {
+  const jokeList = document.querySelector("#favourites");
+  while (jokeList.firstChild) {
+    jokeList.removeChild(jokeList.firstChild);
+  }
+});
+
+//  function refresh (event) {
+//   document.querySelector("#favourites").textContent = "";
+//  }
+ //document.querySelector("refresh").addEventListener("click", refresh);
+ 
  // create submit button
  //if rated highest, ask if you want to save to fav 
  //to create a favourites list
