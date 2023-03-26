@@ -18,7 +18,7 @@
    }
 
    
-   
+   let theJoke = "";
    async function dadJokes() {
      const response = await fetch("https://icanhazdadjoke.com/", {
        headers: { accept: "application/json" },
@@ -27,20 +27,22 @@
       const gettingJoke = await response.json()
       console.log(gettingJoke)
       
-      const theJoke = document.querySelector("#dadJoke");
+      theJoke = document.querySelector("#dadJoke");
       theJoke.textContent = gettingJoke.joke;
       
-      //if input = yes, add to favourites
-      //put this function inside the async function with (theJoke.textContent)
-      // add event listener to YES button
-      let favouriteButton = document.querySelector("#yes-favourites")
-      favouriteButton.addEventListener("click", () => addToFavourites(theJoke.textContent))
- }
- document.querySelector('#click-me').addEventListener('click', dadJokes);
-
+    }
+    document.querySelector('#click-me').addEventListener('click', dadJokes);
+    
+    //if input = yes, add to favourites
+    //put this function inside the async function with (theJoke.textContent)
+    // add event listener to YES button
+    let favouriteButton = document.querySelector("#yes-favourites")
+    favouriteButton.addEventListener("click", () => addToFavourites(theJoke.textContent))
+    //refresh
 const refreshButton = document.querySelector("#refresh");
 refreshButton.addEventListener("click", () => {
   const jokeList = document.querySelector("#favourites");
+  
   while (jokeList.firstChild) {
     jokeList.removeChild(jokeList.firstChild);
   }
